@@ -1,0 +1,59 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  PROJECT_PATH: 'pulumi-dotnet-boilerplate.csproj'
+  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+
+
+jobs:
+  build:
+
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'pulumi-dotnet-boilerplate.csproj'
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+          #    - name: make restore and build
+          #      run: make build
+
+
+        #    - name: Publish
+        #run: dotnet nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+        #
+    - name: 'Restore packages'
+      run: dotnet restore
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+    
+    - name: Version and Tag
+      id: bump_version
+      uses: mathieudutour/github-tag-action@v5.2
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: ''
+          
+    - name: Pack
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.bump_version.outputs.new_tag }} 
+        
+    - name: Push
+      run: dotnet nuget push **\*.nupkg --skip-duplicate --source 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}} 
+#      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}
+#      run: dotnet nuget push ./output/*.nupkg --skip-duplicate -s https://nuget.pkg.github.com/index.json -k ${secrets.NUGET_API_KEY}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
