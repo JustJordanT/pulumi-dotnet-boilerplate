@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>Pulumi.NET.Boilerplate</RootNamespace>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>pulumi-dotnet</PackageId>
     <Authors>Jordan Taylor</Authors>
     <Description>Pulumi .NET; A minimal .NET template for using pulumi with C#</Description>
@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="Pulumi" Version="3.*" />
-    <None Include="../readme.md" Pack="true" PackagePath="" />
+    <None Include="../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
