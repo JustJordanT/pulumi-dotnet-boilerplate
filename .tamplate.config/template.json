@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Jordan Taylor",
+  "classifications": [ "Common", "Console", "IaC", "Cloud" ],
+  "identity": "Pulumi.NET.Boilerplate",
+  "description": "A minimal pulumi project for getting started with dotnet.",
+  "name": "Pulumi .NET Boilerplate",
+  "shortName": "pulumidotnet",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
