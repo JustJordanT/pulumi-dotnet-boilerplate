@@ -10,7 +10,7 @@ Open up your Command Prompt / Powershell and run the following command to instal
 ```bash
 dotnet new --install Pulumi.NET.Boilerplate
 ```
-This would install the `Pulumi .NET Boilerplate` template globally on your machine. With that done, let's see how you can start generating complete .NET Solutions seamlessly.
+This would install the `Pulumi .NET Boilerplate` template globally on your machine. With that done, let's see how you can start generating complete .NET projects seamlessly.
 
 Simply navigate to a new directory (wherever you want to place your new solution), and open up Command Prompt at the opened directory.
 
