@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="Pulumi" Version="3.*" />
+    <None Include="../readme.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
