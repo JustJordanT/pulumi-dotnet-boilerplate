@@ -7,7 +7,7 @@
     <RootNamespace>Pulumi.NET.Boilerplate</RootNamespace>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageId>pulumi-dotnet</PackageId>
+    <PackageId>pulumi-dotnet-boilerplate</PackageId>
     <Authors>Jordan Taylor</Authors>
     <Description>Pulumi .NET; A minimal .NET template for using pulumi with C#</Description>
     <PackageTags>pulumi terraform infra iac azure</PackageTags>
