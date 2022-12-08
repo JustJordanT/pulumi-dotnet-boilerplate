@@ -4,6 +4,18 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <RootNamespace>Pulumi.NET.Boilerplate</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageId>pulumi-dotnet</PackageId>
+    <Authors>Jordan Taylor</Authors>
+    <Description>Pulumi .NET; A minimal .NET template for using pulumi with C#</Description>
+    <PackageTags>pulumi terraform infra iac azure</PackageTags>
+    <PackageProjectUrl>https://github.com/JustJordanT/pulumi-dotnet-boilerplate</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JustJordanT/pulumi-dotnet-boilerplate</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
